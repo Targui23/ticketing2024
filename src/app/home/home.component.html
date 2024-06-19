@@ -1,1 +1,7 @@
-<p>home works!</p>
+<h1>Welcome in Ticketing</h1>
+
+@if(authentification.role == "Etudiant" ) {
+
+    <a mat-raised-button color="primary" routerLink="/add-ticket">Ajouter un nouvel ticket</a>
+}
+

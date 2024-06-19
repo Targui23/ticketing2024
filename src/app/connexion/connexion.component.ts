@@ -42,7 +42,7 @@ export class ConnexionComponent {
     if (this.formulaire.valid) {
       this.http
         .post<any>(
-          'http://localhost/backend-angular-ticket-dw2-24/connexion.php',
+          'http://localhost/backend_ticketing_dw2/connexion.php',
           this.formulaire.value
         )
         .subscribe((resultat) => {

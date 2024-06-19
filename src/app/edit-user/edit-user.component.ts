@@ -51,9 +51,9 @@ export class EditUserComponent {
 
   ngOnInit() {
     this.route.params.subscribe((parametresUrl) => {
-      //si il y a bien un parametre dans l'url et que c'est un nombre
+      
       if (parametresUrl['id'] && !isNaN(parametresUrl['id'])) {
-        //on créait un nouveau FormGroup dont le formsControl "password" n'a pas de validateur
+        
         this.formulaire = this.formBuilder.group({
           email: ['', [Validators.required, Validators.email]],
           password: ['', []],
@@ -64,7 +64,7 @@ export class EditUserComponent {
 
         this.http
           .get<Utilisateur>(
-            'http://localhost/backend-angular-ticket-dw2-24/get-user.php?id=' +
+            'http://localhost/backend_ticketing_dw2/get-user.php?id=' +
               parametresUrl['id']
           )
           .subscribe({
@@ -91,8 +91,8 @@ export class EditUserComponent {
     if (this.formulaire.valid) {
       const url: string =
         this.idUtilisateur == null
-          ? 'http://localhost/backend-angular-ticket-dw2-24/add-user.php'
-          : 'http://localhost/backend-angular-ticket-dw2-24/edit-user.php?id=' +
+          ? 'http://localhost/backend_ticketing_dw2/add-user.php'
+          : 'http://localhost/backend_ticketing_dw2/edit-user.php?id=' +
             this.idUtilisateur;
 
       this.http.post(url, this.formulaire.value).subscribe({

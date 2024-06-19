@@ -40,7 +40,7 @@ export class ManageUserComponent {
 
       this.http
         .get<Utilisateur[]>(
-          'http://localhost/backend-angular-ticket-dw2-24/list-user.php'
+          'http://localhost/backend_ticketing_dw2/list-user.php'
         )
         .subscribe((resultat) => (this.listeUtilisateur = resultat));
     
@@ -52,7 +52,7 @@ export class ManageUserComponent {
  
       this.http
         .delete(
-          'http://localhost/backend-angular-ticket-dw2-24/delete-user.php?id=' +
+          'http://localhost/backend_ticketing_dw2/delete-user.php?id=' +
             idUtilisateur
         )
         .subscribe({

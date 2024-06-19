@@ -6,6 +6,8 @@ import { ManageUserComponent } from './manage-user/manage-user.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { administrateurGuard } from './administrateur.guard';
 import { gestionnaireGuard } from './gestionnaire.guard';
+import { AddTicketComponent } from './add-ticket/add-ticket.component';
+import { etudiantGuard } from './etudiant.guard';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -26,5 +28,11 @@ export const routes: Routes = [
   },
   { path: 'connexion', component: ConnexionComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  {
+    path: 'add-ticket',
+    component: AddTicketComponent,
+    canActivate: [etudiantGuard],
+
+  },
   { path: '**', component: NotFoundComponent },
 ];
